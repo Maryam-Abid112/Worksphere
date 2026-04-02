@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB= require("./config/db");
 const userRoutes = require("./Routes/Userroutes");
+const clientroutes = require("./Routes/Clientroutes");
 
 
 
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
+app.use("/api/Client", clientroutes);
 
 app.get("/", (req, res) => {
   res.send("API Running...");
