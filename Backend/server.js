@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const connectDB= require("./config/db");
 const userRoutes = require("./Routes/Userroutes");
 const clientroutes = require("./Routes/Clientroutes");
+const freelancerRoutes = require("./Routes/FreelancerRoutes");
 
 
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 app.use("/api/Client", clientroutes);
+app.use("/api/freelancers", freelancerRoutes);
 
 app.get("/", (req, res) => {
   res.send("API Running...");
