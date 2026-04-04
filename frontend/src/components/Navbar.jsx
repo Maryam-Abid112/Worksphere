@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ onSignInClick }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,8 +21,8 @@ export default function Navbar() {
         </div>
       </div>
       <div className="nav-right">
-        <span className="nav-link">Sign In</span>
-        <button className="btn-primary sm">Join Free</button>
+        <span className="nav-link" onClick={onSignInClick}> Sign In</span>
+        <button className="btn-primary sm" onClick={onSignInClick}>Join Free</button>
       </div>
     </nav>
   );

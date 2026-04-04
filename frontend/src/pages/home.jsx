@@ -5,6 +5,8 @@ import Categories from "../components/Categories";
 import  Stats from "../components/Stats";
 import Footer from "../components/Footer";
 import Freelancers from "../components/Freelancers";
+import SignIn from "./Signin";
+import Signup from "./Signup";
 
 
 /* ── Data ───────────────────────────────────────── */
@@ -66,10 +68,11 @@ const LEGAL_LINKS    = ["Privacy", "Terms", "Cookies", "Accessibility"];
 
 export default function FreelancerHome() {
      const [search, setSearch] = useState("");
+  const [modalType, setModalType] = useState(null);;
 
   return (
     <div>
-      <Navbar />
+      <Navbar onSignInClick={() => setModalType("signin")} />
 
       <Hero
         search={search}
@@ -78,7 +81,7 @@ export default function FreelancerHome() {
         FREELANCERS={FREELANCERS}
       />
 
-      <Categories CATEGORIES={CATEGORIES} />
+      <Categories CATEGORIES={CATEGORIES}/>
 
 
       <Stats STATS={STATS} />
@@ -90,6 +93,14 @@ export default function FreelancerHome() {
         SOCIAL_ICONS={SOCIAL_ICONS}
         LEGAL_LINKS={LEGAL_LINKS}
       />
+       {modalType && (
+        <div className="overlay" onClick={() => setModalType(null)}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            {modalType === "signin" && <SignIn onSwitch={() => setModalType("signup")} />}
+            {modalType === "signup" && <Signup onSwitch={() => setModalType("signin")} />}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
