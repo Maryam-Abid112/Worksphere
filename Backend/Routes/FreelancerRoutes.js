@@ -13,3 +13,5 @@ router.post("/", protect, upsertFreelancerProfile);
 router.get("/", getAllFreelancers);
 router.get("/me", protect, getFreelancerProfile);
 router.get("/skill/:skill", getFreelancerBySkill);
+
+module.exports = router;
