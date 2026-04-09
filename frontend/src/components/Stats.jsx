@@ -4,8 +4,8 @@ export default function Stats({ STATS }) {
       <div className="stats-grid">
         {STATS.map(s => (
           <div key={s.label}>
-            <div className="stat-value">{s.value}</div>
-            <div className="stat-label">{s.label}</div>
+            <div className="stats-value">{s.value}</div>
+            <div className="stats-label">{s.label}</div>
           </div>
         ))}
       </div>

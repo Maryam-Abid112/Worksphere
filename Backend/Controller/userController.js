@@ -11,9 +11,6 @@ const generateToken = (id) => {
     });
 };
 
-
-
-
 exports.registerUser = async (req, res) => {
     const { name, email, password, role } = req.body;
 
