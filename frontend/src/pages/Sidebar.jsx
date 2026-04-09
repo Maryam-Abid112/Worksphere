@@ -3,7 +3,7 @@ const NAV = [
   { icon: "▦", label: "Dashboard", page: "dashboard" },
   { section: "Work" },
   { icon: "⌕", label: "Browse Jobs", page: "browse" },
-  { icon: "◈", label: "My Proposals", page: "proposals", badge: 3 },
+  { icon: "◈", label: "My Proposals", page: "proposals" },
   { icon: "◉", label: "Active Projects", page: "projects" },
   { icon: "⬡", label: "Workspace", page: "workspace" },
   { section: "You" },

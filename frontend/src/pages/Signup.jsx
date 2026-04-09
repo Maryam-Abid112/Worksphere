@@ -1,12 +1,14 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 function Signup({ onSwitch }) {
     const[name,setname]=useState("");
     const[email, setemail]=useState("");
     const[password,setpassword]=useState("");
     const[role,setrole]=useState("");
+     const navigate = useNavigate();
 
     const signup= async(e)=>{
         e.preventDefault();
@@ -23,6 +25,14 @@ function Signup({ onSwitch }) {
       localStorage.setItem("userInfo", JSON.stringify(data));
       
          alert("Signup successful");
+
+          if (data.role === "client") {
+      navigate("/Client");
+    } else if(data.role=="freelancer") {
+      navigate("/Dashboard");
+    }else{
+         console.log("Error");
+    }
 
         }catch(error){
             if (error.response && error.response.data.message) {

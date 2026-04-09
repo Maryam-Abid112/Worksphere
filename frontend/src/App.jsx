@@ -15,10 +15,8 @@ import EarningsPage from "./pages/Earningspage";
 import SettingsPage from "./pages/Settingspage";
 
 import Home from "./pages/home";
-import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Signin from "./pages/Signin"
-import Signup from "./pages/Signup"
 import Client from "./pages/Clientdash";
 import ClientHome from "./pages/Clienthome";
 import Settings from "./pages/Settings"
